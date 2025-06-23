@@ -10,20 +10,23 @@
 <body>
 
   <header>
-    <div class="container header-content">
-      <h1>¡ALERTA! <span>Secuestro Infantil</span></h1>
-      <p class="subtitle">Educar es la mejor defensa. Informar es salvar vidas.</p>
-      <a href="#prevencion" class="btn btn-primary">Aprendé a Prevenir</a>
+    <nav class="navbar container">
+      <a href="#que-es" class="nav-link">¿Qué es?</a>
+      <a href="#por-que" class="nav-link">¿Por qué?</a>
+      <a href="#prevencion" class="nav-link">Prevención</a>
+      <a href="#accion" class="nav-link">Acción</a>
+      <button id="toggle-theme" aria-label="Cambiar tema">🌙</button>
+    </nav>
+    <div class="header-content container">
+      <h1 class="animate-fade-in">¡ALERTA! <span>Secuestro Infantil</span></h1>
+      <p class="subtitle animate-slide-in">Educar es la mejor defensa. Informar es salvar vidas.</p>
+      <a href="#prevencion" class="btn btn-primary animate-bounce">Aprendé a Prevenir</a>
     </div>
   </header>
 
-  <section class="hero-image">
-    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1350&q=80" alt="Manos de niño agarrando manos de adulto" />
-  </section>
-
   <main class="container">
 
-    <section id="que-es" class="info-section">
+    <section id="que-es" class="info-section animate-slide-up">
       <h2>¿Qué es el secuestro infantil?</h2>
       <p>
         Es la retención ilegal de un niño o niña con fines de extorsión, trata, o explotación.  
@@ -32,16 +35,15 @@
       </p>
     </section>
 
-    <section id="por-que" class="info-section bg-light">
+    <section id="por-que" class="info-section bg-light animate-slide-up delay-1">
       <h2>¿Por qué hablarlo en la escuela?</h2>
       <p>
         El colegio es el lugar donde niños, docentes y familias pueden aprender a detectar señales de alerta,  
         compartir información segura y fomentar un ambiente de confianza que prevenga situaciones peligrosas.
       </p>
-      <img src="https://images.unsplash.com/photo-1596495577886-d920f1e3b796?auto=format&fit=crop&w=1350&q=80" alt="Niños en la escuela" />
     </section>
 
-    <section id="prevencion" class="info-section">
+    <section id="prevencion" class="info-section animate-slide-up delay-2">
       <h2>¿Cómo prevenirlo?</h2>
       <ul class="checklist">
         <li>Hablar con confianza y sin miedo sobre temas difíciles.</li>
@@ -51,13 +53,12 @@
       </ul>
     </section>
 
-    <section id="accion" class="info-section bg-light">
+    <section id="accion" class="info-section bg-light animate-slide-up delay-3">
       <h2>¿Qué hacer si ves algo sospechoso?</h2>
       <p>
         No dudes en actuar. Llamá al <strong>911</strong> o a la <strong>Línea 102</strong>.  
         Tu denuncia puede salvar vidas y proteger a los más vulnerables.
       </p>
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1350&q=80" alt="Persona usando teléfono para llamar" />
     </section>
 
   </main>
@@ -66,5 +67,36 @@
     <p>© 2025 Proyecto Educativo Tomi - Todos los derechos reservados.</p>
   </footer>
 
+  <script>
+    // Cambio de tema claro/oscuro
+    const toggleBtn = document.getElementById('toggle-theme');
+    const body = document.body;
+
+    // Chequeamos si el usuario ya tiene tema preferido guardado
+    if(localStorage.getItem('theme') === 'dark'){
+      body.classList.add('dark-theme');
+      toggleBtn.textContent = '☀️';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-theme');
+      if(body.classList.contains('dark-theme')){
+        toggleBtn.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        toggleBtn.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // Smooth scroll para anclas
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({behavior: 'smooth'});
+      });
+    });
+  </script>
 </body>
 </html>
