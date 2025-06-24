@@ -1,60 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alerta Secuestro Infantil - Educar para Proteger</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secuestro Infantil - Concientización</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <div class="header-content container">
-      <h1 class="animate-fade-in">¡ALERTA! <span>Secuestro Infantil</span></h1>
-      <p class="subtitle animate-slide-in">Educar es la mejor defensa. Informar es salvar vidas.</p>
-      <a href="#prevencion" class="btn btn-primary animate-bounce">Aprendé a Prevenir</a>
-    </div>
+    <h1>El lado oculto: comprendiendo el secuestro infantil</h1>
+    <p class="slogan">Informarse es el primer paso para proteger.</p>
   </header>
 
-  <main class="container">
-    <section id="que-es" class="info-section animate-slide-up">
-      <h2>¿Qué es el secuestro infantil?</h2>
-      <p>
-        Es la retención ilegal de un niño o niña con fines de extorsión, trata, o explotación.  
-        Es una realidad dolorosa que afecta a comunidades en todo el mundo.  
-        Conocer el problema es el primer paso para proteger a quienes más queremos.
-      </p>
-    </section>
+  <section class="video-section">
+    <h2>Video explicativo</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KbMUAg0b514?si=53uNI9e1C7tD2zO2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+    <p>Mirá este video antes de continuar. Lo que aprendas hoy puede salvar vidas.</p>
+  </section>
 
-    <section id="por-que" class="info-section bg-light animate-slide-up delay-1">
-      <h2>¿Por qué hablarlo en la escuela?</h2>
-      <p>
-        El colegio es el lugar donde niños, docentes y familias pueden aprender a detectar señales de alerta,  
-        compartir información segura y fomentar un ambiente de confianza que prevenga situaciones peligrosas.
-      </p>
-    </section>
+  <section class="tipos">
+    <h2>Tipos de Secuestros</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>💰 Extorsivo</h3>
+        <p>Busca obtener dinero a cambio de la liberación.</p>
+      </div>
+      <div class="card">
+        <h3>😟 Parental</h3>
+        <p>Un padre retiene al menor sin autorización legal.</p>
+      </div>
+      <div class="card">
+        <h3>🧠 Con fines de trata</h3>
+        <p>Vinculado a explotación o redes ilegales.</p>
+      </div>
+      <div class="card">
+        <h3>🌍 Internacional</h3>
+        <p>Implica traslados a otros países.</p>
+      </div>
+      <div class="card">
+        <h3>🔒 Virtual</h3>
+        <p>Engaños por Internet: grooming y más.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="prevencion" class="info-section animate-slide-up delay-2">
-      <h2>¿Cómo prevenirlo?</h2>
-      <ul class="checklist">
-        <li>Hablar con confianza y sin miedo sobre temas difíciles.</li>
-        <li>No compartir información personal en redes sociales.</li>
-        <li>Reconocer comportamientos sospechosos.</li>
-        <li>Establecer canales de comunicación abiertos con adultos de confianza.</li>
+  <section class="usos">
+    <h2>¿Para qué se utilizan?</h2>
+    <ul>
+      <li>Trata de personas</li>
+      <li>Explotación sexual/laboral</li>
+      <li>Venta de órganos</li>
+      <li>Chantaje emocional o económico</li>
+      <li>Matrimonios forzados</li>
+    </ul>
+  </section>
+
+  <section class="juego">
+    <h2>Quiz interactivo sobre secuestro infantil</h2>
+    <div id="quiz-container">
+      <div id="question" style="font-weight: bold; font-size: 1.2rem; margin-bottom: 1rem;"></div>
+      <div id="choices"></div>
+      <button id="next-btn" class="btn" style="display:none; margin-top: 1rem;">Siguiente</button>
+      <div id="result" style="margin-top: 1rem; font-weight: bold;"></div>
+    </div>
+  </section>
+
+  <section class="cierre">
+    <h2>Conclusión</h2>
+    <p>El secuestro infantil no solo representa una tragedia familiar, sino un problema social que nos afecta a todos.
+    Estar informados, alertas y educar a los niños y adolescentes es clave para prevenir. Como comunidad, debemos trabajar unidos para crear un entorno más seguro.</p>
+
+    <blockquote>
+      “El silencio también es cómplice. Informate, hablá y actuá.”
+    </blockquote>
+
+    <h3>Reflexión final:</h3>
+    <p><strong>¿Estás preparado para actuar si algo sucede a tu alrededor?</strong></p>
+    <div class="info-extra">
+      <h3>🧠 Información complementaria</h3>
+      <h4>¿Qué hacer si presenciás un intento de secuestro?</h4>
+      <ul>
+        <li>Llamá inmediatamente al 911 o número de emergencias local.</li>
+        <li>Intentá retener detalles: aspecto del agresor, vehículo, dirección.</li>
+        <li>No intervengas si ponés en riesgo tu vida. Alertá a otros adultos o autoridades.</li>
       </ul>
-    </section>
 
-    <section id="accion" class="info-section bg-light animate-slide-up delay-3">
-      <h2>¿Qué hacer si ves algo sospechoso?</h2>
-      <p>
-        No dudes en actuar. Llamá al <strong>911</strong> o a la <strong>Línea 102</strong>.  
-        Tu denuncia puede salvar vidas y proteger a los más vulnerables.
-      </p>
-    </section>
-  </main>
+      <h4>Señales de advertencia en niños/as:</h4>
+      <ul>
+        <li>Cambios repentinos de conducta: retraimiento, miedo, silencio.</li>
+        <li>Comportamientos inusuales como evasión o rechazo al contacto físico.</li>
+        <li>Mención de encuentros extraños o personas desconocidas.</li>
+      </ul>
+
+      <h4>Prevención desde casa y la escuela:</h4>
+      <ul>
+        <li>Enseñar que tienen derecho a decir “NO”.</li>
+        <li>Fomentar la comunicación abierta con adultos de confianza.</li>
+        <li>Explicar claramente qué es un adulto seguro y qué no lo es.</li>
+      </ul>
+    </div>
+
+<p style="margin-top:2rem; font-style:italic; color:var(--pink); text-align:center;">
+  ¿Y si tu silencio fuera el próximo error?
+</p>
+
+  </section>
 
   <footer>
-    <p>© 2025 Proyecto Educativo - Todos los derechos reservados.</p>
+    <p>Hecho para concientizar y proteger.</p>
+    <button class="btn" onclick="toggleSobreNosotros()">Sobre nosotros</button>
+    <div id="sobre-nosotros" style="display: none; margin-top: 1rem; animation: fadeIn 1s ease-out;">
+      <p><strong>Autores:</strong> Tiago Tomás Vera Salas y Lourdes Azul Pereyra Díaz</p>
+    </div>
   </footer>
+
+  <script>
+    function toggleSobreNosotros() {
+      const section = document.getElementById("sobre-nosotros");
+      section.style.display = section.style.display === "none" ? "block" : "none";
+    }
+  </script>
 </body>
 </html>
