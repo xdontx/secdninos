@@ -5,9 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alerta Secuestro Infantil - Educar para Proteger</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <div class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">AlertaNIÑOS</a>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="#que-es">¿Qué es?</a></li>
+        <li><a class="nav-link" href="#por-que">¿Por qué?</a></li>
+        <li><a class="nav-link" href="#prevencion">Prevención</a></li>
+        <li><a class="nav-link" href="#accion">Acción</a></li>
+      </ul>
+      <button id="toggle-theme" title="Cambiar tema">🌙</button>
+    </div>
+  </div>
+
+  <header>
     <div class="header-content container">
       <h1 class="animate-fade-in">¡ALERTA! <span>Secuestro Infantil</span></h1>
       <p class="subtitle animate-slide-in">Educar es la mejor defensa. Informar es salvar vidas.</p>
@@ -16,7 +30,6 @@
   </header>
 
   <main class="container">
-
     <section id="que-es" class="info-section animate-slide-up">
       <h2>¿Qué es el secuestro infantil?</h2>
       <p>
@@ -51,7 +64,6 @@
         Tu denuncia puede salvar vidas y proteger a los más vulnerables.
       </p>
     </section>
-
   </main>
 
   <footer>
@@ -63,15 +75,14 @@
     const toggleBtn = document.getElementById('toggle-theme');
     const body = document.body;
 
-    // Chequeamos si el usuario ya tiene tema preferido guardado
-    if(localStorage.getItem('theme') === 'dark'){
-      body.classList.add('dark-theme');
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
       toggleBtn.textContent = '☀️';
     }
 
     toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark-theme');
-      if(body.classList.contains('dark-theme')){
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
         toggleBtn.textContent = '☀️';
         localStorage.setItem('theme', 'dark');
       } else {
@@ -85,7 +96,7 @@
       link.addEventListener('click', e => {
         e.preventDefault();
         const target = document.querySelector(link.getAttribute('href'));
-        target.scrollIntoView({behavior: 'smooth'});
+        target.scrollIntoView({ behavior: 'smooth' });
       });
     });
   </script>
