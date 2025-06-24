@@ -8,19 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="navbar">
-    <div class="nav-container">
-      <a href="#" class="logo">AlertaNIÑOS</a>
-      <ul class="nav-links">
-        <li><a class="nav-link" href="#que-es">¿Qué es?</a></li>
-        <li><a class="nav-link" href="#por-que">¿Por qué?</a></li>
-        <li><a class="nav-link" href="#prevencion">Prevención</a></li>
-        <li><a class="nav-link" href="#accion">Acción</a></li>
-      </ul>
-      <button id="toggle-theme" title="Cambiar tema">🌙</button>
-    </div>
-  </div>
-
   <header>
     <div class="header-content container">
       <h1 class="animate-fade-in">¡ALERTA! <span>Secuestro Infantil</span></h1>
@@ -69,36 +56,5 @@
   <footer>
     <p>© 2025 Proyecto Educativo Tomi - Todos los derechos reservados.</p>
   </footer>
-
-  <script>
-    // Cambio de tema claro/oscuro
-    const toggleBtn = document.getElementById('toggle-theme');
-    const body = document.body;
-
-    if (localStorage.getItem('theme') === 'dark') {
-      body.classList.add('dark-mode');
-      toggleBtn.textContent = '☀️';
-    }
-
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      if (body.classList.contains('dark-mode')) {
-        toggleBtn.textContent = '☀️';
-        localStorage.setItem('theme', 'dark');
-      } else {
-        toggleBtn.textContent = '🌙';
-        localStorage.setItem('theme', 'light');
-      }
-    });
-
-    // Smooth scroll para anclas
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  </script>
 </body>
 </html>
