@@ -47,6 +47,18 @@
     </div>
   </section>
 
+  <section class="historia-reflexiva">
+    <h2>Una historia que podría ser real</h2>
+    <blockquote>
+      Camila tenía 10 años y volvía del colegio como siempre. Esa tarde, alguien que decía conocer a su mamá la abordó en la esquina. “Tu mamá me pidió que te lleve, tuvo un accidente”, dijo. Camila dudó... pero decidió seguirlo.
+      <br><br>
+      Nadie volvió a verla.
+      <br><br>
+      Hoy, su familia vive con preguntas que nunca obtuvieron respuesta. ¿Y si alguien la hubiera detenido? ¿Y si ella hubiera sabido qué hacer?
+    </blockquote>
+    <p class="reflexion">Una decisión puede cambiarlo todo. Informar salva vidas.</p>
+  </section>
+
   <section class="usos">
     <h2>¿Para qué se utilizan?</h2>
     <ul>
@@ -58,6 +70,43 @@
     </ul>
   </section>
 
+  <section class="prevencion">
+    <h2>Prevención y Concientización</h2>
+    <p>La prevención es clave. Aquí algunos consejos:</p>
+    <ul>
+      <li>Educar a los niños sobre el peligro de hablar con extraños.</li>
+      <li>Fomentar la comunicación abierta en casa.</li>
+      <li>Establecer un plan de seguridad familiar.</li>
+      <li>Conocer las señales de alerta en el comportamiento de los niños.</li>
+      <li>Reportar cualquier sospecha a las autoridades.</li>
+    </ul>
+  </section>
+  <section class="estadisticas">
+    <h2>Estadísticas Alarmantes</h2>
+    <div class="estadistica-item">
+      <h3>Niños desaparecidos en el mundo por año</h3>
+      <div class="barra-container">
+        <div class="barra" style="--porcentaje: 85%;">85,000</div>
+      </div>
+    </div>
+    <div class="estadistica-item">
+      <h3>Casos no resueltos (%)</h3>
+      <div class="barra-container">
+        <div class="barra" style="--porcentaje: 70%;">70%</div>
+      </div>
+    </div>
+    <div class="estadistica-item">
+      <h3>Países más afectados</h3>
+      <ul>
+        <li>📍 México</li>
+        <li>📍 Brasil</li>
+        <li>📍 India</li>
+        <li>📍 Nigeria</li>
+        <li>📍 Estados Unidos</li>
+      </ul>
+    </div>
+  </section>
+
   <section class="juego">
     <h2>Quiz interactivo sobre secuestro infantil</h2>
     <div id="quiz-container">
@@ -67,6 +116,7 @@
       <div id="result" style="margin-top: 1rem; font-weight: bold;"></div>
     </div>
   </section>
+
 
   <section class="cierre">
     <h2>Conclusión</h2>
@@ -103,11 +153,24 @@
       </ul>
     </div>
 
-<p style="margin-top:2rem; font-style:italic; color:var(--pink); text-align:center;">
-  ¿Y si tu silencio fuera el próximo error?
-</p>
-
+    <p style="margin-top:2rem; font-style:italic; color:var(--pink); text-align:center;">
+      ¿Y si tu silencio fuera el próximo error?
+    </p>
   </section>
+
+  <section class="simulador-decisiones">
+  <h2>Para finalizar, ¿Qué harías en esta situación?</h2>
+  <div class="card">
+    <p>Ves a un adulto tomando del brazo a un niño que grita "¡No te conozco! ¡Ayuda!" en la calle.</p>
+    <div class="options">
+      <button class="option-btn" onclick="mostrarRespuesta(0)">Seguir caminando, no es mi problema.</button>
+      <button class="option-btn" onclick="mostrarRespuesta(1)">Llamar al 911 inmediatamente.</button>
+      <button class="option-btn" onclick="mostrarRespuesta(2)">Grabar con el celular desde lejos.</button>
+    </div>
+    <p id="respuesta-decision" class="respuesta"></p>
+  </div>
+</section>
+
 
   <footer>
     <p>Hecho para concientizar y proteger.</p>
@@ -118,10 +181,121 @@
   </footer>
 
   <script>
+    function mostrarRespuesta(index) {
+  const respuestas = [
+    "Ignorar puede significar perder una oportunidad de salvar una vida.",
+    "¡Muy bien! Llamar a emergencias es lo correcto en estos casos.",
+    "Puede ayudar como prueba, pero primero debe llamarse a las autoridades."
+  ];
+  const colores = ["var(--red)", "var(--green)", "var(--accent)"];
+  document.getElementById("respuesta-decision").textContent = respuestas[index];
+  document.getElementById("respuesta-decision").style.color = colores[index];
+}
+    const quizData = [
+    {
+      question: "¿Qué significa 'Alerta'?",
+      choices: ["Estado de atención ante peligro", "Persona que secuestra", "Lugar seguro"],
+      correct: 0
+    },
+    {
+      question: "¿Qué es un 'Testigo'?",
+      choices: ["Alguien que ve un hecho importante", "Un culpable", "Un policía"],
+      correct: 0
+    },
+    {
+      question: "¿Cuál es el objetivo del 'Rescate'?",
+      choices: ["Liberar a alguien en peligro", "Capturar al sospechoso", "Ignorar la situación"],
+      correct: 0
+    },
+    {
+      question: "¿Qué es una 'Sospecha'?",
+      choices: ["Duda sobre algo malo", "Prueba definitiva", "Una mentira"],
+      correct: 0
+    },
+    {
+      question: "¿Qué busca la 'Investigación'?",
+      choices: ["Descubrir la verdad", "Ignorar el problema", "Celebrar un evento"],
+      correct: 0
+    }
+  ];
+
+  const questionEl = document.getElementById('question');
+  const choicesEl = document.getElementById('choices');
+  const nextBtn = document.getElementById('next-btn');
+  const resultEl = document.getElementById('result');
+
+  let currentQuestion = 0;
+  let score = 0;
+
+  function loadQuestion() {
+    const q = quizData[currentQuestion];
+    questionEl.textContent = q.question;
+    choicesEl.innerHTML = '';
+    resultEl.textContent = '';
+    nextBtn.style.display = 'none';
+
+    q.choices.forEach((choice, i) => {
+      const btn = document.createElement('button');
+      btn.textContent = choice;
+      btn.classList.add('btn');
+      btn.style.margin = '5px 0';
+      btn.onclick = () => selectAnswer(i);
+      choicesEl.appendChild(btn);
+    });
+  }
+
+  function selectAnswer(choiceIndex) {
+    const q = quizData[currentQuestion];
+    const buttons = choicesEl.querySelectorAll('button');
+    buttons.forEach(btn => btn.disabled = true);
+
+    if (choiceIndex === q.correct) {
+      score++;
+      resultEl.textContent = '¡Correcto!';
+      resultEl.style.color = 'var(--green)';
+    } else {
+      resultEl.textContent = `Incorrecto. La respuesta correcta es: "${q.choices[q.correct]}"`;
+      resultEl.style.color = 'var(--red)';
+    }
+    nextBtn.style.display = 'inline-block';
+  }
+
+  nextBtn.onclick = () => {
+    currentQuestion++;
+    if (currentQuestion < quizData.length) {
+      loadQuestion();
+    } else {
+      questionEl.textContent = `¡Terminaste el quiz! Tu puntaje: ${score} / ${quizData.length}`;
+      choicesEl.innerHTML = '';
+      nextBtn.style.display = 'none';
+      resultEl.textContent = 'Gracias por aprender y ayudar a concientizar.';
+      resultEl.style.color = 'var(--accent)';
+    }
+  };
+
+  loadQuestion();
     function toggleSobreNosotros() {
       const section = document.getElementById("sobre-nosotros");
       section.style.display = section.style.display === "none" ? "block" : "none";
     }
+    document.addEventListener('DOMContentLoaded', () => {
+  const fadeElems = document.querySelectorAll('section, .card, .prevencion ul li, .estadistica-item ul li');
+
+  function checkVisible() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    fadeElems.forEach(elem => {
+      const rect = elem.getBoundingClientRect();
+      if (rect.top < triggerBottom) {
+        elem.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkVisible);
+  checkVisible(); // Al cargar la página también
+});
+
   </script>
 </body>
 </html>

@@ -222,3 +222,395 @@ body.crucigrama-body {
   margin-right: 8px;
   color: var(--accent);
 } 
+
+/* Simulador de decisiones */
+.simulador-decisiones {
+  background-color: var(--card);
+  padding: 3rem 1rem;
+  margin: 3rem auto;
+  max-width: 1000px;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px var(--accent);
+  text-align: center;
+  animation: fadeIn 1s ease-out;
+}
+
+.simulador-decisiones h2 {
+  color: var(--accent);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.simulador-decisiones .card p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--fg);
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.option-btn {
+  background-color: var(--pink);
+  color: var(--bg);
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.option-btn:hover {
+  background-color: var(--green);
+  box-shadow: 0 0 15px var(--pink);
+  transform: scale(1.05);
+}
+
+.respuesta {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.historia-reflexiva {
+  background-color: var(--card);
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px var(--accent);
+  margin: 3rem auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.historia-reflexiva h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.historia-reflexiva blockquote {
+  font-style: italic;
+  color: var(--fg);
+  border-left: 4px solid var(--pink);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+}
+
+.reflexion {
+  color: var(--green);
+  font-weight: bold;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.prevencion {
+  background-color: var(--card);
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px var(--accent);
+  margin: 3rem auto;
+  max-width: 1000px;
+  color: var(--fg);
+  animation: fadeIn 1s ease-out;
+}
+
+.prevencion h2 {
+  color: var(--accent);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.prevencion p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.prevencion ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.prevencion ul li {
+  background-color: var(--bg);
+  margin: 0.5rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 5px solid var(--pink);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  box-shadow: 0 0 8px var(--pink);
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.prevencion ul li:hover {
+  background-color: var(--pink);
+  color: var(--bg);
+  box-shadow: 0 0 15px var(--pink);
+}
+.prevencion ul li::before {
+  content: '✅';
+  margin-right: 8px;
+  color: var(--green);
+}
+
+.prevencion ul li::before {
+  content: '🔍';
+  margin-right: 8px;
+  color: var(--accent);
+}
+
+.prevencion ul li::before {
+  content: '⚠️';
+  margin-right: 8px;
+  color: var(--red);
+}
+
+.estadisticas {
+  background-color: var(--card);
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px var(--accent);
+  margin: 3rem auto;
+  max-width: 1000px;
+  color: var(--fg);
+  animation: fadeIn 1s ease-out;
+}
+
+.estadisticas h2 {
+  color: var(--accent);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.estadistica-item {
+  margin-bottom: 2rem;
+}
+
+.estadistica-item h3 {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+  color: var(--pink);
+}
+
+.barra-container {
+  background-color: var(--bg);
+  border-radius: 20px;
+  overflow: hidden;
+  height: 30px;
+  box-shadow: inset 0 0 5px var(--accent);
+}
+
+.barra {
+  background: linear-gradient(90deg, var(--green), var(--pink));
+  height: 100%;
+  width: 0;
+  max-width: var(--porcentaje);
+  color: var(--bg);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 0 8px var(--green);
+  animation: barraAnim 2s forwards ease-out;
+}
+
+@keyframes barraAnim {
+  from { width: 0; }
+  to { width: var(--porcentaje); }
+}
+
+.estadistica-item ul {
+  list-style: none;
+  padding-left: 1rem;
+  color: var(--fg);
+  font-size: 1.1rem;
+}
+
+.estadistica-item ul li {
+  margin: 0.3rem 0;
+  font-weight: 600;
+  cursor: default;
+}
+
+/* --- Efecto neón glow para botones y tarjetas --- */
+.btn, .card, .prevencion ul li, .estadistica-item ul li {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+
+/* --- Animación fade y slide cuando haces scroll --- */
+.fade-slide {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-slide.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Efecto glitch sutil para títulos --- */
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 0 var(--pink), -2px 0 var(--green);
+  }
+  20% {
+    text-shadow: -2px 0 var(--pink), 2px 0 var(--green);
+  }
+  40% {
+    text-shadow: 2px 0 var(--pink), -2px 0 var(--green);
+  }
+  60% {
+    text-shadow: -2px 0 var(--pink), 2px 0 var(--green);
+  }
+  80% {
+    text-shadow: 2px 0 var(--pink), -2px 0 var(--green);
+  }
+  100% {
+    text-shadow: -2px 0 var(--pink), 2px 0 var(--green);
+  }
+}
+
+header h1, .estadisticas h2, .prevencion h2 {
+  animation: glitch 2.5s infinite;
+  font-weight: 900;
+}
+
+/* --- Cursor pointer para las tarjetas y listas --- */
+.card, .prevencion ul li, .estadistica-item ul li {
+  cursor: pointer;
+}
+
+/* --- Efecto hover para enlaces --- */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+} 
+a:hover {
+  color: var(--pink);
+  text-decoration: underline;
+}
+
+/* Estilos mejorados para el quiz */
+#quiz-container {
+  background: var(--card);
+  border-radius: 15px;
+  padding: 2rem 3rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow:
+    0 0 15px var(--accent),
+    0 0 40px var(--pink);
+  font-family: 'Roboto', sans-serif;
+  color: var(--fg);
+}
+
+#question {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-shadow: 0 0 5px var(--pink);
+}
+
+#choices button {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  background: var(--card);  /* fondo oscuro */
+  color: var(--fg);
+  box-shadow:
+    inset 0 0 5px var(--accent),
+    0 0 8px var(--pink);
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#choices button:hover:not(:disabled) {
+  color: var(--pink);
+  box-shadow:
+    0 0 15px var(--pink),
+    0 0 40px var(--pink);
+  background-color: var(--card); /* que no cambie a rosa */
+}
+
+#choices button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+#choices button.correct {
+  background-color: var(--green);
+  box-shadow:
+    0 0 15px var(--green),
+    0 0 40px var(--green);
+  color: var(--bg);
+}
+
+#choices button.incorrect {
+  background-color: var(--red);
+  box-shadow:
+    0 0 15px var(--red),
+    0 0 40px var(--red);
+  color: var(--bg);
+}
+
+#next-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 15px;
+  border: none;
+  background-color: var(--pink);
+  color: var(--bg);
+  box-shadow:
+    0 0 20px var(--pink),
+    0 0 50px var(--pink);
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#next-btn:hover {
+  background-color: var(--green);
+  box-shadow:
+    0 0 20px var(--green),
+    0 0 50px var(--green);
+}
+
+#result {
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 0 10px var(--accent);
+}
+#result.correct {
+  color: var(--green);
+}
