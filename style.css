@@ -614,3 +614,136 @@ a:hover {
 #result.correct {
   color: var(--green);
 }
+
+/* --- Diseño responsive --- */
+@media (max-width: 768px) {
+  header {
+    padding: 2rem 1rem;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  .cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .card {
+    flex: 1 1 100%;
+  }
+  section {
+    padding: 2rem 1rem;
+  }
+  .video-section iframe {
+    height: 250px;
+  }
+  #quiz-container {
+    padding: 1.5rem 2rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  .slogan {
+    font-size: 1rem;
+  }
+  .btn, #next-btn {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* --- Animación de entrada al cargar la página --- */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aplica la animación a elementos principales */
+header, section, .cards, footer {
+  animation: fadeSlideIn 0.8s ease forwards;
+}
+
+/* Puedes escalonar la animación para que cada sección aparezca con delay */
+section:nth-of-type(1) { animation-delay: 0.2s; }
+section:nth-of-type(2) { animation-delay: 0.4s; }
+section:nth-of-type(3) { animation-delay: 0.6s; }
+section:nth-of-type(4) { animation-delay: 0.8s; }
+
+/* Opcional: animación para las cards si las tenés */
+.cards .card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideIn 0.8s ease forwards;
+  animation-delay: 1s;
+}
+/* Animación para el botón de quiz */
+#quiz-container {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideIn 0.8s ease forwards;
+  animation-delay: 1.2s;
+}
+
+/* Animación por defecto invisible */
+.animate-on-load {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Animación cuando se activa */
+.animate-on-load.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.formulario-sugerencias {
+  background: var(--card);
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px var(--accent);
+  margin: 3rem auto;
+  max-width: 700px;
+  color: var(--fg);
+  animation: fadeIn 1s ease-out;
+  text-align: center;
+}
+
+.formulario-sugerencias h2 {
+  color: var(--accent);
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.formulario-sugerencias form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formulario-sugerencias input,
+.formulario-sugerencias textarea {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  background: var(--bg);
+  color: var(--fg);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.formulario-sugerencias input:focus,
+.formulario-sugerencias textarea:focus {
+  outline: none;
+  box-shadow: 0 0 15px var(--pink);
+}

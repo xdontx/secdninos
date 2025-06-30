@@ -171,6 +171,19 @@
   </div>
 </section>
 
+  <section class="formulario-sugerencias fade-slide">
+    <h2>💡 ¿Tenés una idea? ¡Contanos!</h2>
+    <form action="https://formspree.io/f/mdkzbakw" method="POST">
+      <label for="nombre">Tu nombre:</label>
+      <input type="text" name="nombre" id="nombre" required>
+
+      <label for="idea">Tu sugerencia:</label>
+      <textarea name="idea" id="idea" rows="5" required></textarea>
+
+      <button type="submit" class="btn">Enviar sugerencia</button>
+    </form>
+  </section>
+
 
   <footer>
     <p>Hecho para concientizar y proteger.</p>
@@ -295,6 +308,18 @@
   window.addEventListener('scroll', checkVisible);
   checkVisible(); // Al cargar la página también
 });
+  // Animación al cargar la página
+  window.addEventListener('load', () => {
+    const elementos = document.querySelectorAll('header, section, .cards, footer');
+    elementos.forEach((el, index) => {
+      el.classList.add('animate-on-load');
+      // Animar con delay en cascada
+      setTimeout(() => {
+        el.classList.add('visible');
+      }, index * 300); // 300ms de delay entre cada elemento
+    });
+  });
+
 
   </script>
 </body>
