@@ -1,4 +1,4 @@
-<!DOCTYPE html>More actions
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -249,6 +249,7 @@
 
     q.choices.forEach((choice, i) => {
       const btn = document.createElement('button');
+      btn.type = 'button'; // Añadir esto
       btn.textContent = choice;
       btn.classList.add('btn');
       btn.style.margin = '5px 0';
