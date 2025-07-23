@@ -28,39 +28,64 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
-      >
-      </iframe>
+      ></iframe>
       <p>
-        Mirá este video antes de continuar. Lo que aprendas hoy puede salvar
-        vidas.
+        Mirá este video antes de continuar. Lo que aprendas hoy puede salvar vidas.
       </p>
     </section>
 
-    <section class="tipos">
-      <h2>Tipos de Secuestros</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>💰 Extorsivo</h3>
-          <p>Busca obtener dinero a cambio de la liberación.</p>
-        </div>
-        <div class="card">
-          <h3>😟 Parental</h3>
-          <p>Un padre retiene al menor sin autorización legal.</p>
-        </div>
-        <div class="card">
-          <h3>🧠 Con fines de trata</h3>
-          <p>Vinculado a explotación o redes ilegales.</p>
-        </div>
-        <div class="card">
-          <h3>🌍 Internacional</h3>
-          <p>Implica traslados a otros países.</p>
-        </div>
-        <div class="card">
-          <h3>🔒 Virtual</h3>
-          <p>Engaños por Internet: grooming y más.</p>
+    <div class="cards">
+      <div class="card flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>💰 Extorsivo</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Busca obtener dinero a cambio de la liberación.</p>
+          </div>
         </div>
       </div>
-    </section>
+      <div class="card flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>😟 Parental</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Un padre retiene al menor sin autorización legal.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>🧠 Con fines de trata</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Vinculado a explotación o redes ilegales.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>🌍 Internacional</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Implica traslados a otros países.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>🔒 Virtual</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Engaños por Internet: grooming y más.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <section class="historia-reflexiva">
       <h2>Una historia que podría ser real</h2>
@@ -103,6 +128,58 @@
         </li>
         <li>Reportar cualquier sospecha a las autoridades.</li>
       </ul>
+      <div class="info-extra">
+        <h3>🧠 Información complementaria</h3>
+        <h4>¿Qué hacer si presenciás un intento de secuestro?</h4>
+        <ul>
+          <li>Llamá inmediatamente al 911 o número de emergencias local.</li>
+          <li>
+            Intentá retener detalles: aspecto del agresor, vehículo, dirección.
+          </li>
+          <li>
+            No intervengas si ponés en riesgo tu vida. Alertá a otros adultos o
+            autoridades.
+          </li>
+        </ul>
+        <h4>Señales de advertencia en niños/as:</h4>
+        <ul>
+          <li>
+            Cambios repentinos de conducta: retraimiento, miedo, silencio.
+          </li>
+          <li>
+            Comportamientos inusuales como evasión o rechazo al contacto físico.
+          </li>
+          <li>Mención de encuentros extraños o personas desconocidas.</li>
+        </ul>
+        <h4>Prevención desde casa y la escuela:</h4>
+        <ul>
+          <li>Enseñar que tienen derecho a decir “NO”.</li>
+          <li>Fomentar la comunicación abierta con adultos de confianza.</li>
+          <li>Explicar claramente qué es un adulto seguro y qué no lo es.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="juego">
+      <h2>Quiz interactivo sobre secuestro infantil</h2>
+      <div id="quiz-container">
+        <div id="progress-bar-container">
+          <div id="progress-bar"></div>
+        </div>
+        <div
+          id="question"
+          style="font-weight: bold; font-size: 1.2rem; margin-bottom: 1rem"
+        ></div>
+        <div id="choices"></div>
+        <button
+          id="next-btn"
+          class="btn"
+          style="display: none; margin-top: 1rem"
+        >
+          Siguiente
+        </button>
+        <div id="result" style="margin-top: 1rem; font-weight: bold"></div>
+      </div>
     </section>
 
     <section class="estadisticas">
@@ -131,28 +208,6 @@
       </div>
     </section>
 
-    <section class="juego">
-      <h2>Quiz interactivo sobre secuestro infantil</h2>
-      <div id="quiz-container">
-        <div id="progress-bar-container">
-          <div id="progress-bar"></div>
-        </div>
-        <div
-          id="question"
-          style="font-weight: bold; font-size: 1.2rem; margin-bottom: 1rem"
-        ></div>
-        <div id="choices"></div>
-        <button
-          id="next-btn"
-          class="btn"
-          style="display: none; margin-top: 1rem"
-        >
-          Siguiente
-        </button>
-        <div id="result" style="margin-top: 1rem; font-weight: bold"></div>
-      </div>
-    </section>
-
     <section class="cierre">
       <h2>Conclusión</h2>
       <p>
@@ -161,50 +216,13 @@
         educar a los niños y adolescentes es clave para prevenir. Como
         comunidad, hay que trabajar unidos para crear un entorno más seguro.
       </p>
-
       <blockquote>
         “El silencio también es cómplice. Informate, hablá y actuá.”
       </blockquote>
-
       <h3>Reflexión final:</h3>
       <p>
-        <strong
-          >¿Estás preparado para actuar si algo sucede a tu alrededor?</strong
-        >
+        <strong>¿Estás preparado para actuar si algo sucede a tu alrededor?</strong>
       </p>
-      <div class="info-extra">
-        <h3>🧠 Información complementaria</h3>
-        <h4>¿Qué hacer si presenciás un intento de secuestro?</h4>
-        <ul>
-          <li>Llamá inmediatamente al 911 o número de emergencias local.</li>
-          <li>
-            Intentá retener detalles: aspecto del agresor, vehículo, dirección.
-          </li>
-          <li>
-            No intervengas si ponés en riesgo tu vida. Alertá a otros adultos o
-            autoridades.
-          </li>
-        </ul>
-
-        <h4>Señales de advertencia en niños/as:</h4>
-        <ul>
-          <li>
-            Cambios repentinos de conducta: retraimiento, miedo, silencio.
-          </li>
-          <li>
-            Comportamientos inusuales como evasión o rechazo al contacto físico.
-          </li>
-          <li>Mención de encuentros extraños o personas desconocidas.</li>
-        </ul>
-
-        <h4>Prevención desde casa y la escuela:</h4>
-        <ul>
-          <li>Enseñar que tienen derecho a decir “NO”.</li>
-          <li>Fomentar la comunicación abierta con adultos de confianza.</li>
-          <li>Explicar claramente qué es un adulto seguro y qué no lo es.</li>
-        </ul>
-      </div>
-
       <p
         style="
           margin-top: 2rem;
@@ -272,9 +290,7 @@
       function mostrarRespuesta(opcion) {
         const respuesta = document.getElementById("respuesta-decision");
         const opciones = document.querySelectorAll(".option-btn");
-
         opciones.forEach((btn) => (btn.disabled = true));
-
         if (opcion === 1) {
           respuesta.textContent =
             "¡Correcto! Llamar al 911 es la mejor opción.";
@@ -285,6 +301,7 @@
           respuesta.style.color = "var(--red)";
         }
       }
+
       function toggleSobreNosotros() {
         const sobreNosotros = document.getElementById("sobre-nosotros");
         if (sobreNosotros.style.display === "none") {
@@ -293,48 +310,127 @@
           sobreNosotros.style.display = "none";
         }
       }
+
+      // Función para mezclar un array (Fisher-Yates)
+      function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+
+      // 10 preguntas, 5 opciones cada una
       const quizData = [
         {
-          question: "¿Qué significa 'Alerta'?",
+          question: "¿Qué deberías hacer si ves a un niño solo y asustado en la calle?",
           choices: [
-            "Estado de atención ante peligro",
-            "Persona que secuestra",
-            "Lugar seguro",
+            "Ignorarlo, probablemente está esperando a alguien.",
+            "Llamar a la policía o a un adulto responsable.",
+            "Tomarlo de la mano y llevarlo contigo.",
+            "Preguntarle si está perdido y avisar a un adulto cercano.",
+            "Grabar la situación con tu celular."
           ],
-          correct: 0,
+          correct: 3
         },
         {
-          question: "¿Qué es un 'Testigo'?",
+          question: "¿Cuál de estas señales puede indicar un posible secuestro?",
           choices: [
-            "Alguien que ve un hecho importante",
-            "Un culpable",
-            "Un policía",
+            "Un niño corriendo en el parque.",
+            "Un adulto discutiendo con un niño que grita 'no te conozco'.",
+            "Un niño llorando porque perdió su juguete.",
+            "Un adulto tomando del brazo a un niño que parece incómodo.",
+            "Un niño jugando solo en la plaza."
           ],
-          correct: 0,
+          correct: 1
         },
         {
-          question: "¿Cuál es el objetivo del 'Rescate'?",
+          question: "¿Qué información es más útil para las autoridades si presencias un secuestro?",
           choices: [
-            "Liberar a alguien en peligro",
-            "Capturar al sospechoso",
-            "Ignorar la situación",
+            "El color de la ropa del niño.",
+            "La marca y color del vehículo involucrado.",
+            "El nombre del niño.",
+            "La dirección exacta del hecho.",
+            "La hora aproximada del suceso."
           ],
-          correct: 0,
+          correct: 1
         },
         {
-          question: "¿Qué es una 'Sospecha'?",
-          choices: ["Duda sobre algo malo", "Prueba definitiva", "Una mentira"],
-          correct: 0,
+          question: "¿Cuál NO es una medida preventiva recomendada para niños?",
+          choices: [
+            "No hablar con extraños.",
+            "Compartir su ubicación en redes sociales.",
+            "Tener una palabra clave familiar.",
+            "Avisar siempre a dónde van.",
+            "Aprender a pedir ayuda en público."
+          ],
+          correct: 1
         },
         {
-          question: "¿Qué busca la 'Investigación'?",
+          question: "¿Qué acción puede poner en riesgo a un niño?",
           choices: [
-            "Descubrir la verdad",
-            "Ignorar el problema",
-            "Celebrar un evento",
+            "Aceptar regalos de desconocidos.",
+            "Ir acompañado a la escuela.",
+            "Avisar a sus padres si algo raro ocurre.",
+            "No compartir información personal en internet.",
+            "Aprender a decir NO."
           ],
-          correct: 0,
+          correct: 0
         },
+        {
+          question: "¿Cuál es la mejor forma de actuar si un desconocido te ofrece llevarte a casa?",
+          choices: [
+            "Aceptar si parece amable.",
+            "Decirle que no y alejarte rápidamente.",
+            "Pedirle su identificación.",
+            "Esperar a que insista varias veces.",
+            "Llamar a tus padres antes de decidir."
+          ],
+          correct: 1
+        },
+        {
+          question: "¿Qué dato es menos relevante para denunciar un secuestro?",
+          choices: [
+            "La matrícula del vehículo.",
+            "El color de la ropa del niño.",
+            "La dirección exacta del hecho.",
+            "El nombre del adulto sospechoso (si lo sabes).",
+            "La hora aproximada del suceso."
+          ],
+          correct: 1
+        },
+        {
+          question: "¿Qué deberías hacer si recibes un mensaje sospechoso en redes sociales?",
+          choices: [
+            "Ignorarlo y no contárselo a nadie.",
+            "Responder para saber quién es.",
+            "Bloquear y avisar a un adulto de confianza.",
+            "Compartirlo con tus amigos.",
+            "Aceptar la solicitud si tiene foto de perfil."
+          ],
+          correct: 2
+        },
+        {
+          question: "¿Cuál de estas situaciones es más peligrosa?",
+          choices: [
+            "Ir solo a casa por un camino poco transitado.",
+            "Ir acompañado de amigos.",
+            "Avisar siempre a tus padres dónde estás.",
+            "No hablar con extraños.",
+            "Llevar un teléfono móvil cargado."
+          ],
+          correct: 0
+        },
+        {
+          question: "¿Qué es lo primero que debes hacer si presencias un intento de secuestro?",
+          choices: [
+            "Grabar la situación con tu celular.",
+            "Intervenir físicamente.",
+            "Llamar inmediatamente a la policía o pedir ayuda a un adulto.",
+            "Seguir caminando y no involucrarte.",
+            "Publicarlo en redes sociales."
+          ],
+          correct: 2
+        }
       ];
 
       const questionEl = document.getElementById("question");
@@ -345,6 +441,7 @@
 
       let currentQuestion = 0;
       let score = 0;
+      let currentCorrectIndex = 0;
 
       function updateProgress(index, total) {
         const percent = ((index + 1) / total) * 100;
@@ -359,29 +456,32 @@
         nextBtn.style.display = "none";
         updateProgress(currentQuestion, quizData.length);
 
-        q.choices.forEach((choice, i) => {
+        // Mezclar opciones y guardar el índice de la correcta
+        const options = q.choices.map((choice, idx) => ({ choice, idx }));
+        shuffle(options);
+        const correctIndex = options.findIndex(opt => opt.idx === q.correct);
+
+        options.forEach((opt, i) => {
           const btn = document.createElement("button");
-          btn.textContent = choice;
+          btn.textContent = opt.choice;
           btn.classList.add("btn");
           btn.style.margin = "5px 0";
-          btn.onclick = () => selectAnswer(i);
+          btn.onclick = () => selectAnswer(i, correctIndex);
           choicesEl.appendChild(btn);
         });
       }
 
-      function selectAnswer(choiceIndex) {
-        const q = quizData[currentQuestion];
+      function selectAnswer(selectedIndex, correctIndex) {
         const buttons = choicesEl.querySelectorAll("button");
         buttons.forEach((btn) => (btn.disabled = true));
 
-        if (choiceIndex === q.correct) {
+        if (selectedIndex === correctIndex) {
           score++;
           resultEl.textContent = "¡Correcto!";
           resultEl.style.color = "var(--green)";
         } else {
-          resultEl.textContent = `Incorrecto. La respuesta correcta es: "${
-            q.choices[q.correct]
-          }"`;
+          const q = quizData[currentQuestion];
+          resultEl.textContent = `Incorrecto. La respuesta correcta era: "${q.choices[q.correct]}"`;
           resultEl.style.color = "var(--red)";
         }
 
@@ -441,8 +541,6 @@
       fadeSlideElems.forEach((el) => {
         el.classList.add("fade-slide-in");
       });
-
-
     </script>
   </body>
 </html>
