@@ -75,12 +75,12 @@ section h2 {
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  margin-bottom: 3rem; /* Puedes aumentar este valor a 4rem o 5rem */
+  margin-bottom: 1rem; /* Puedes aumentar este valor a 4rem o 5rem */
 }
 
 .card {
   background: var(--card);
-  padding: 3rem;
+  padding: 1rem;
   border-radius: 1rem;
   flex: 1 1 200px;
   text-align: center;
@@ -89,9 +89,9 @@ section h2 {
 }
 
 .card.flip-card {
-  width: 180px;
+  width: 130px;
   min-height: 120px;
-  max-width: 90vw;
+  max-width: 30vw;
 }
 
 .card:hover {
@@ -648,7 +648,7 @@ a:hover {
   }
   .cards {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
   }
   .card {
     flex: 1 1 100%;
@@ -674,7 +674,7 @@ a:hover {
     align-items: center;
   }
   .card.flip-card {
-    width: 95vw;
+    width: 90vw;
     min-width: 0;
     max-width: 98vw;
   }
@@ -863,4 +863,29 @@ img, iframe {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Fix general para móviles muy pequeños */
+@media (max-width: 400px) {
+  .card {
+    padding: 1rem; /* menos padding */
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  section h2 {
+    font-size: 1.2rem;
+  }
+
+  .btn, #next-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+/* Evita scroll horizontal en móviles */
+body {
+  overflow-x: hidden;
 }
