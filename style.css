@@ -75,6 +75,7 @@ section h2 {
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
+  margin-top: 1rem;
   margin-bottom: 1rem; /* Puedes aumentar este valor a 4rem o 5rem */
 }
 
